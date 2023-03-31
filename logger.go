@@ -103,3 +103,18 @@ func (w Wrapper) ImpliedArgs() []interface{} { return nil }
 // SetLevel has no implementation.
 func (w Wrapper) SetLevel(lvl Level) {
 }
+
+func (w Wrapper) GetLevel() Level {
+	switch w.Zap.Level() {
+	case zap.DebugLevel:
+		return hclog.Debug
+	case zap.InfoLevel:
+		return hclog.Info
+	case zap.WarnLevel:
+		return hclog.Warn
+	case zap.ErrorLevel:
+		return hclog.Error
+	default:
+		return hclog.Info
+	}
+}

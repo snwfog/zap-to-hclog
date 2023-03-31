@@ -44,6 +44,8 @@ func (l *Nop) ResetNamed(name string) hclog.Logger { return l }
 
 func (l *Nop) SetLevel(level Level) {}
 
+func (l *Nop) GetLevel() Level { return hclog.Info }
+
 func (l *Nop) StandardLogger(opts *hclog.StandardLoggerOptions) *log.Logger {
 	return log.New(l.StandardWriter(opts), "", log.LstdFlags)
 }
