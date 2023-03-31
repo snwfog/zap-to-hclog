@@ -1,4 +1,4 @@
-module github.com/zaffka/zap-to-hclog
+module github.com/snwfog/zap-to-hclog
 
 go 1.19
 
